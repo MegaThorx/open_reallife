@@ -9,5 +9,6 @@ Console.Clear = function(amount)
 end
 
 Console.Print = function(text, ...)
+  if(text==nil)then text = "" end
   outputServerLog(string.format(text, ...))
 end

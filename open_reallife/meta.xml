@@ -7,12 +7,18 @@
 
   <!-- Server -->
   <script src="server/config.lua" type="server" />
+
+  <script src="server/sql/structure.lua" type="server" />
+  <script src="server/sql/manager.lua" type="server" />
+
   <script src="server/helpers/console.lua" type="server" />
   <script src="server/helpers/sql.lua" type="server" />
   <script src="server/helpers/time.lua" type="server" />
   <script src="server/helpers/log.lua" type="server" />
   <script src="server/helpers/player.lua" type="server" />
   <script src="server/helpers/server.lua" type="server" />
+  <script src="server/helpers/elementdata.lua" type="server" />
+
   <script src="server/main.lua" type="server" />
   <!-- End Server -->
 

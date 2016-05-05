@@ -22,7 +22,7 @@ addEventHandler("onResourceStart", resourceRoot, function()
     Console.Print("Failed to connected to the database")
   end
 
-
+  SQL_MANAGER.Validate()
 
 
   local diff = getTickCount() - start

@@ -8,6 +8,10 @@ SQL.Connect = function()
     host = host..";port=".._CONFIG["db.port"]
   end
 
+  if(_CONFIG["db.dbname"])then
+    host = host..";dbname=".._CONFIG["db.dbname"]
+  end
+
   if(_CONFIG["db.autoreconnect"])then
      if not options=="" then
        options = options..";"
@@ -31,6 +35,18 @@ SQL.Connect = function()
   return false
 end
 
-SQL.Query = function(callbackFunction, callbackArguments, query, ...)
-  return dbQuery(callbackFunction, callbackArguments, SQL.connection, query, ...)
+SQL.Query = function(query, ...)
+  return dbQuery(SQL.connection, query, ...)
+end
+
+SQL.Poll = function(queryHandle, timeout, multipleResults)
+  return dbPoll(queryHandle, timeout, multipleResults)
+end
+
+SQL.Free = function(queryHandle)
+  return dbFree(queryHandle)
+end
+
+SQL.Exec = function(query, ...)
+  return dbExec(SQL.connection, query, ...)
 end

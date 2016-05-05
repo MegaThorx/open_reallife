@@ -1,3 +1,5 @@
+-- EXTENDING CONFIG
+
 _CONFIG["password"] = "" -- Empty strings means no password
 _CONFIG["db.type"] = "mysql" -- mysql is recommended
 _CONFIG["db.username"] = "root"
