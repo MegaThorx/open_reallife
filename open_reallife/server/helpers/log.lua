@@ -24,3 +24,8 @@ Log.PrintServer = function(text, ...)
   Console.Print(text, ...)
   Log.Print(string.format(text, ...), "logs/server/")
 end
+
+Log.PrintSQL = function(text, ...)
+  Console.Print(text, ...)
+  Log.Print(string.format(text, ...), "logs/sql/")
+end
