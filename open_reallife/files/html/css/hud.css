@@ -1,0 +1,12 @@
+.hud {
+    float: right;
+    text-align: left;
+    width: 200px;
+    border-radius: 25px;
+    background: #d3d3d3;
+    padding: 10px 10px 10px 10px;
+}
+
+.hud #playername{
+  font-size: 1.2em;
+}

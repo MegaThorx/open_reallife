@@ -3,6 +3,7 @@
 
   <!-- Shared -->
   <script src="shared/config.lua" type="shared" />
+  <script src="shared/helpers/time.lua" type="shared" />
   <!-- End Shared -->
 
   <!-- Server -->
@@ -13,7 +14,6 @@
 
   <script src="server/helpers/console.lua" type="server" />
   <script src="server/helpers/sql.lua" type="server" />
-  <script src="server/helpers/time.lua" type="server" />
   <script src="server/helpers/log.lua" type="server" />
   <script src="server/helpers/player.lua" type="server" />
   <script src="server/helpers/server.lua" type="server" />
@@ -23,6 +23,8 @@
   <!-- End Server -->
 
   <!-- Client -->
+  <script src="client/gui/gui.lua" type="client" />
+  <script src="client/hud.lua" type="client" />
   <script src="client/main.lua" type="client" />
   <!-- End Client -->
 
@@ -31,6 +33,18 @@
   <!-- End Maps -->
 
   <!-- Files -->
-
+  <file src="files/html/css/jquery-ui.css" />
+  <file src="files/html/css/jquery-ui.structure.css" />
+  <file src="files/html/css/jquery-ui.theme.css" />
+  <file src="files/html/css/hud.css" />
+  <file src="files/html/js/jquery.js" />
+  <file src="files/html/js/jquery-ui.js" />
+  <file src="files/html/images/ui-icons_444444_256x240.png" />
+  <file src="files/html/images/ui-icons_555555_256x240.png" />
+  <file src="files/html/images/ui-icons_777620_256x240.png" />
+  <file src="files/html/images/ui-icons_777777_256x240.png" />
+  <file src="files/html/images/ui-icons_cc0000_256x240.png" />
+  <file src="files/html/images/ui-icons_ffffff_256x240.png" />
+  <file src="files/html/index.html" />
   <!-- End Files -->
 </meta>

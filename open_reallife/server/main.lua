@@ -26,6 +26,13 @@ addEventHandler("onResourceStart", resourceRoot, function()
 
 
   local diff = getTickCount() - start
+
+  for k,v in ipairs(getElementsByType("player")) do
+    spawnPlayer(v, 0, 0, 3)
+    fadeCamera(v, true)
+    setCameraTarget(v, v)
+  end
+
   Log.PrintServer("Started %s in %ims", _CONFIG["servername"], diff)
 end)
 
