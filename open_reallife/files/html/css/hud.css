@@ -12,16 +12,6 @@
 .hud #playername{
   font-size: 1.2em;
 }
-/*
-.radar {
-  position: fixed;
-  left: -240px;
-  bottom: 260px;
-  width: 250px;
-  height: 250px;
-  clip: rect(250px, 500px, 500px, 250px);
-}
-*/
 
 .radar {
     left: 10px;
