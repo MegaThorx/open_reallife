@@ -39,3 +39,8 @@ end)
 addCommandHandler("rst", function()
   Server.Restart()
 end)
+
+addCommandHandler("auto", function(player)
+  local veh = createVehicle(411, getElementPosition(player))
+  warpPlayerIntoVehicle(player, veh)
+end)

@@ -34,5 +34,9 @@ GUI.Init = function()
 end
 
 GUI.Render = function()
+  dxSetBlendMode("add")
   dxDrawImage(0, 0, screenX, screenY, GUI.browser, 0, 0,  0, tocolor(255, 255, 255, 255), true)
+  dxSetBlendMode("blend")
+
+  dxDrawText(string.format("x %d, y %d, z %d", getElementPosition(localPlayer)), 0, 100)
 end
