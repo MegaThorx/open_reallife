@@ -30,6 +30,8 @@
   <script src="client/gui/window.lua" type="client" />
   <script src="client/gui/textbox.lua" type="client" />
 
+  <script src="client/helpers/cursor.lua" type="client" />
+
   <script src="client/hud.lua" type="client" />
   <script src="client/login.lua" type="client" />
   <script src="client/translations.lua" type="client" />
@@ -45,11 +47,18 @@
   <file src="files/html/css/jquery-ui.structure.css" />
   <file src="files/html/css/jquery-ui.theme.css" />
   <file src="files/html/css/hud.css" />
+  <file src="files/html/css/login.css" />
+  <file src="files/html/css/bootstrap.min.css" />
 
   <file src="files/html/js/jquery.js" />
   <file src="files/html/js/jquery-ui.js" />
   <file src="files/html/js/hud.js" />
   <file src="files/html/js/windows.js" />
+  <file src="files/html/js/translate.js" />
+  <file src="files/html/js/bootstrap.min.js" />
+
+  <file src="files/html/fonts/glyphicons-halflings-regular.ttf" />
+  <file src="files/html/fonts/glyphicons-halflings-regular.woff" />
 
   <file src="files/html/images/ui-icons_444444_256x240.png" />
   <file src="files/html/images/ui-icons_555555_256x240.png" />
@@ -61,6 +70,8 @@
   <file src="files/html/images/radar/player.png" />
 
   <file src="files/html/index.html" />
+  <file src="files/html/login.html" />
+  <file src="files/html/register.html" />
 
   <file src="files/translations/de.ini" />
   <file src="files/translations/en.ini" />
