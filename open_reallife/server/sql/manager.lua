@@ -1,14 +1,20 @@
 SQL_MANAGER = {}
 
 SQL_MANAGER.Validate = function()
-  for k,v in pairs(SQL_STRUCTURE) do
-    local handle = SQL.Query("SHOW TABLES LIKE ?", k)
-    local result = SQL.Poll(handle, 25)
+  local handle = SQL.Query("SELECT TABLE_NAME as name FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' AND TABLE_SCHEMA=?", _CONFIG["db.dbname"])
+  local result = SQL.Poll(handle, 25)
+  local found = {}
 
-    if(#result==0)then
+  for k,v in pairs(result) do
+    if(SQL_STRUCTURE[v])then
+      table.insert(found, v)
+        SQL_MANAGER.ValidateTable(v,SQL_STRUCTURE[v])
+    end
+  end
+
+  for k,v in pairs(SQL_STRUCTURE) do
+    if not found[k] then
       SQL_MANAGER.CreateTable(k,v)
-    else
-      SQL_MANAGER.ValidateTable(k,v)
     end
   end
 end
@@ -59,7 +65,7 @@ SQL_MANAGER.CreateTable = function(name, structure)
   sql = sql..");"
 
   SQL.Exec(sql)
-  Log.PrintSQL("Created table `%s`", name)
+  Log.PrintSQL("created table", nil, name)
 end
 
 SQL_MANAGER.ValidateTable = function(name, structure)
@@ -128,7 +134,7 @@ SQL_MANAGER.ValidateTable = function(name, structure)
           sql = sql..";"
 
           SQL.Exec(sql)
-          Log.PrintSQL("Changed field `%s` of table `%s`", k, name)
+          Log.PrintSQL("changed field", k, name)
         end
       else
         local sql = string.format("ALTER TABLE `%s`.`%s`", _CONFIG["db.dbname"], name)
@@ -156,7 +162,7 @@ SQL_MANAGER.ValidateTable = function(name, structure)
         sql = sql..";"
 
         SQL.Exec(sql)
-        Log.PrintSQL("Added field `%s` to table `%s`", k, name)
+        Log.PrintSQL("added field", k, name)
       end
     end
 end

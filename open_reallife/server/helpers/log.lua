@@ -32,6 +32,9 @@ Log.PrintCheat = function(text, ...)
   Log.PrintOld(string.format(text, ...), "cheat")
 end
 
+Log.PrintSQL = function(action, field, table)
+  Log.Print({["action"] = action, ["field"] = field, ["table"] = table}, "sql")
+end
 
 Log.Print = function(entry, dir)
   local content = {}
