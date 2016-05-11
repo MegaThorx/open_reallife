@@ -42,5 +42,5 @@ end)
 
 addCommandHandler("auto", function(player)
   local veh = createVehicle(411, getElementPosition(player))
-  warpPlayerIntoVehicle(player, veh)
+  warpPedIntoVehicle(player, veh)
 end)

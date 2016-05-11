@@ -35,4 +35,5 @@
   left: 125px;
   bottom: 125px;
   position: fixed;
+  border-spacing: 0;
 }

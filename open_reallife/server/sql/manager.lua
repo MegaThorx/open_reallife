@@ -3,7 +3,7 @@ SQL_MANAGER = {}
 SQL_MANAGER.Validate = function()
   for k,v in pairs(SQL_STRUCTURE) do
     local handle = SQL.Query("SHOW TABLES LIKE ?", k)
-    local result = SQL.Poll(handle, 10)
+    local result = SQL.Poll(handle, 25)
 
     if(#result==0)then
       SQL_MANAGER.CreateTable(k,v)

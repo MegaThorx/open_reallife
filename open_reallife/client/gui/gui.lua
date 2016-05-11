@@ -3,14 +3,6 @@ GUI = {}
 GUI.Init = function()
   GUI.browser = createBrowser(screenX, screenY, true, true)
 
-  addEventHandler("onClientBrowserCreated", GUI.browser,
-  	function()
-      local rst = loadBrowserURL(GUI.browser, "http://mta/open_reallife/files/html/index.html")
-      toggleBrowserDevTools(GUI.browser, true)
-      addEventHandler("onClientRender", root, GUI.Render)
-  	end
-  )
-
   addEventHandler("onClientClick", root,
   	function(button, state)
   	if state == "down" then
@@ -31,6 +23,18 @@ GUI.Init = function()
   addEventHandler ( "onClientCursorMove" , root , function ( relativeX , relativeY , absoluteX , absoluteY )
   	injectBrowserMouseMove ( GUI.browser , absoluteX , absoluteY )
   end  )
+
+  return GUI.browser
+end
+
+GUI.InitRendering = function()
+  local rst = loadBrowserURL(GUI.browser, "http://mta/open_reallife/files/html/index.html")
+
+  if(_CONFIG["browserdebugging"])then
+    toggleBrowserDevTools(GUI.browser, true)
+  end
+
+  addEventHandler("onClientRender", root, GUI.Render)
 end
 
 GUI.Render = function()

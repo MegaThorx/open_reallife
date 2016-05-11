@@ -19,12 +19,19 @@
   <script src="server/helpers/server.lua" type="server" />
   <script src="server/helpers/elementdata.lua" type="server" />
 
+  <script src="server/client.lua" type="server" />
+  <script src="server/login.lua" type="server" />
+
   <script src="server/main.lua" type="server" />
   <!-- End Server -->
 
   <!-- Client -->
   <script src="client/gui/gui.lua" type="client" />
+  <script src="client/gui/window.lua" type="client" />
+  <script src="client/gui/textbox.lua" type="client" />
+
   <script src="client/hud.lua" type="client" />
+  <script src="client/login.lua" type="client" />
   <script src="client/main.lua" type="client" />
   <!-- End Client -->
 
@@ -37,9 +44,12 @@
   <file src="files/html/css/jquery-ui.structure.css" />
   <file src="files/html/css/jquery-ui.theme.css" />
   <file src="files/html/css/hud.css" />
+
   <file src="files/html/js/jquery.js" />
   <file src="files/html/js/jquery-ui.js" />
   <file src="files/html/js/hud.js" />
+  <file src="files/html/js/windows.js" />
+
   <file src="files/html/images/ui-icons_444444_256x240.png" />
   <file src="files/html/images/ui-icons_555555_256x240.png" />
   <file src="files/html/images/ui-icons_777620_256x240.png" />
@@ -48,6 +58,7 @@
   <file src="files/html/images/ui-icons_ffffff_256x240.png" />
   <file src="files/html/images/radar.jpg" />
   <file src="files/html/images/radar/player.png" />
+
   <file src="files/html/index.html" />
   <!-- End Files -->
 </meta>

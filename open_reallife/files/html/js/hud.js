@@ -5,7 +5,7 @@ function updateRadarPosition(x, y, rotation)
   var sizeX = 250;
   var sizeY = 250;
   var border = 10;
-  var mapSize = 2940;
+  var mapSize = 2950;
 
   x = x + mapSize;
   y = (mapSize*2) - (y + mapSize);

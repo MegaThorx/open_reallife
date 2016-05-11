@@ -17,5 +17,5 @@ end
 HUD.UpdateRadar = function()
   local x, y = getElementPosition(localPlayer)
   local _, _, z = getElementRotation(localPlayer)
-  local fail = executeBrowserJavascript(GUI.browser, string.format('updateRadarPosition(%d, %d, %s);', x, y, z*-1))
+  local fail = executeBrowserJavascript(GUI.browser, string.format('updateRadarPosition(%d, %d, %d);', x, y, z*-1))
 end
