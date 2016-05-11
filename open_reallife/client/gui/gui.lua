@@ -1,4 +1,5 @@
 GUI = {}
+GUI.handlers = {}
 
 GUI.Init = function()
   GUI.browser = createBrowser(screenX, screenY, true, true)
@@ -33,7 +34,7 @@ GUI.InitRendering = function()
   if(_CONFIG["browserdebugging"])then
     toggleBrowserDevTools(GUI.browser, true)
   end
-
+  setBrowserAjaxHandler(GUI.browser, "ajax.htm", GUI.AjaxHandler)
   addEventHandler("onClientRender", root, GUI.Render)
 end
 
@@ -43,4 +44,30 @@ GUI.Render = function()
   dxSetBlendMode("blend")
 
   dxDrawText(string.format("x %d, y %d, z %d", getElementPosition(localPlayer)), 0, 100)
+end
+
+GUI.AjaxHandler = function(get, post)
+  if get then
+    for k,v in pairs(get) do
+      if GUI.handlers[k] then
+        return GUI.handlers[k](v)
+      end
+    end
+  end
+end
+
+GUI.AddAjaxGetHandler = function(key, func)
+  if not GUI.handlers[key] then
+    GUI.handlers[key] = func
+    return true
+  end
+  return false
+end
+
+GUI.RemoveAjaxGetHandler = function(key)
+    if GUI.handlers[key] then
+      GUI.handlers[key] = nil
+      return true
+    end
+    return false
 end

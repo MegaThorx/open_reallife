@@ -9,7 +9,7 @@ addEventHandler("onClientResourceStart", resourceRoot, function()
 
   GUI.Init()
   HUD.Init()
-
+  Translations:Init()
 
 
   addEventHandler("onClientBrowserCreated", GUI.browser,
@@ -20,7 +20,7 @@ addEventHandler("onClientResourceStart", resourceRoot, function()
   )
   addEventHandler ( "onClientBrowserDocumentReady" , GUI.browser,
   	function ( url )
-          triggerServerEvent("onClientReady", localPlayer)
+        triggerServerEvent("onClientReady", localPlayer)
   	end
   )
 end)
@@ -31,4 +31,8 @@ bindKey("m", "down", function()
   if(isCursorShowing())then
     focusBrowser(GUI.browser)
   end
+end)
+
+bindKey("n", "down", function()
+  outputChatBox(Translations.Translate("test"))
 end)

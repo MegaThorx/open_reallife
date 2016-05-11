@@ -8,3 +8,4 @@ _CONFIG["gamemode"] = "Open Reallife"
 _CONFIG["map"] = "GTA SA"
 _CONFIG["fpslimit"] = 60
 _CONFIG["blurlevel"] = 0
+_CONFIG["defaultlanguage"] = "en"

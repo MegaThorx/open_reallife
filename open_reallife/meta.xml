@@ -32,6 +32,7 @@
 
   <script src="client/hud.lua" type="client" />
   <script src="client/login.lua" type="client" />
+  <script src="client/translations.lua" type="client" />
   <script src="client/main.lua" type="client" />
   <!-- End Client -->
 
@@ -60,5 +61,8 @@
   <file src="files/html/images/radar/player.png" />
 
   <file src="files/html/index.html" />
+
+  <file src="files/translations/de.ini" />
+  <file src="files/translations/en.ini" />
   <!-- End Files -->
 </meta>

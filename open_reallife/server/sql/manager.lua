@@ -6,9 +6,9 @@ SQL_MANAGER.Validate = function()
   local found = {}
 
   for k,v in pairs(result) do
-    if(SQL_STRUCTURE[v])then
-      table.insert(found, v)
-        SQL_MANAGER.ValidateTable(v,SQL_STRUCTURE[v])
+    if(SQL_STRUCTURE[v["name"]])then
+      found[v["name"]] = true
+      SQL_MANAGER.ValidateTable(v["name"],SQL_STRUCTURE[v["name"]])
     end
   end
 
