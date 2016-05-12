@@ -4,7 +4,6 @@ Translations.texts = {}
 Translations.Init = function()
   Translations.LoadTranslation(_CONFIG["defaultlanguage"])
   GUI.AddAjaxGetHandler("translate", Translations.Translate)
-
 end
 
 

@@ -19,3 +19,15 @@ HUD.UpdateRadar = function()
   local _, _, z = getElementRotation(localPlayer)
   local fail = executeBrowserJavascript(GUI.browser, string.format('updateRadarPosition(%d, %d, %d);', x, y, z*-1))
 end
+
+HUD.Hide = function()
+  executeBrowserJavascript(GUI.browser, '$(".hud").css("visibility", "hidden");')
+  executeBrowserJavascript(GUI.browser, '$(".radar").css("visibility", "hidden");')
+  showChat(false)
+end
+
+HUD.Show = function()
+  executeBrowserJavascript(GUI.browser, '$(".hud").css("visibility", "visible");')
+  executeBrowserJavascript(GUI.browser, '$(".radar").css("visibility", "visible");')
+  showChat(true)
+end

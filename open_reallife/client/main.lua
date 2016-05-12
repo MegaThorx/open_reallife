@@ -27,9 +27,10 @@ end)
 
 
 bindKey("m", "down", function()
-  showCursor(not isCursorShowing(), true)
-  if(isCursorShowing())then
-    focusBrowser(GUI.browser)
+  if(Cursor.IsShowing())then
+    Cursor.Show()
+  else
+    Cursor.Hide()
   end
 end)
 

@@ -53,6 +53,7 @@
 
   <file src="files/html/js/jquery.js" />
   <file src="files/html/js/jquery-ui.js" />
+  <file src="files/html/js/jquery.form.min.js" />
   <file src="files/html/js/hud.js" />
   <file src="files/html/js/windows.js" />
   <file src="files/html/js/translate.js" />
@@ -81,8 +82,6 @@
   <!--- Http -->
 	<html src="files/http/debug.htm" />
 	<html src="files/http/debug.js" raw="true" />
-	<html src="files/http/jExpand.js" raw="true" />
-	<html src="files/http/jquery.js" raw="true" />
 	<html src="files/http/jquery.dataTables.js" raw="true" />
   <html src="files/http/details_close.png" raw="true" />
   <html src="files/http/details_open.png" raw="true" />

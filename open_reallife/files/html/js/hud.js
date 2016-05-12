@@ -20,3 +20,18 @@ function updateRadarPosition(x, y, rotation)
     top: -1*((radarY - sizeY / 2))
   }, 100);
 }
+
+function updateLoginFrameSize()
+{
+  if($("#login").contents().get(0).location.href=="http://mta/open_reallife/files/html/login.html")
+  {
+    $("#login").css("height", "365px");
+  }
+  else if($("#login").contents().get(0).location.href=="http://mta/open_reallife/files/html/register.html") {
+    $("#login").css("height", "515px");
+  }
+  else{
+    $("#login").contents().get(0).location.href = "http://mta/open_reallife/files/html/login.html";
+    $("#login").css("height", "365px");
+  }
+}

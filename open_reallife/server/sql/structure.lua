@@ -9,9 +9,9 @@ SQL_STRUCTURE["accounts"] = {
     ["notnull"] = true,
     ["autoincrement"] = true,
   },
-  ["name"] = {
+  ["username"] = {
     ["datatype"] = "VARCHAR",
-    ["length"] = 22,
+    ["length"] = 32,
   },
   ["password"] = {
     ["datatype"] = "VARCHAR",

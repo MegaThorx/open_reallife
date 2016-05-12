@@ -2,7 +2,7 @@ _CONFIG = {}
 
 
 _CONFIG["devmode"] = true
-_CONFIG["browserdebugging"] = true
+_CONFIG["browserdebugging"] = false
 _CONFIG["servername"] = "Open Reallife"
 _CONFIG["gamemode"] = "Open Reallife"
 _CONFIG["map"] = "GTA SA"

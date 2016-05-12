@@ -16,12 +16,4 @@ HTTP.GetErrorLog = function()
   return result
 end
 
-
-
-
-
-
-
-
-
 HTTPGetErrorLog = HTTP.GetErrorLog
