@@ -62,9 +62,10 @@ Log.Print = function(entry, dir)
 end
 
 addEventHandler("onDebugMessage", root, function(message, level, file, line)
-  Log.Print({["message"] = message, ["level"] = level, ["file"] = file, ["line"] = line, ["traceback"] = Log.Traceback()}, "error")
+  Log.Print({["message"] = message, ["level"] = level, ["file"] = file, ["line"] = line}, "error")
 end)
 
+-- Doesnt work :(
 Log.Traceback = function()
   local level = 4
   local result = {}

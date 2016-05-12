@@ -20,6 +20,7 @@
   <script src="server/helpers/elementdata.lua" type="server" />
 
   <script src="server/client.lua" type="server" />
+  <script src="server/http.lua" type="server" />
   <script src="server/login.lua" type="server" />
 
   <script src="server/main.lua" type="server" />
@@ -76,4 +77,16 @@
   <file src="files/translations/de.ini" />
   <file src="files/translations/en.ini" />
   <!-- End Files -->
+
+  <!--- Http -->
+	<html src="files/http/debug.htm" />
+	<html src="files/http/debug.js" raw="true" />
+	<html src="files/http/jExpand.js" raw="true" />
+	<html src="files/http/jquery.js" raw="true" />
+	<html src="files/http/jquery.dataTables.js" raw="true" />
+  <html src="files/http/details_close.png" raw="true" />
+  <html src="files/http/details_open.png" raw="true" />
+
+	<export function="HTTPGetErrorLog" http="true" />
+  <!-- End Http -->
 </meta>

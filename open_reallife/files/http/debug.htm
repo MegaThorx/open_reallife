@@ -1,0 +1,53 @@
+<*
+if isGuestAccount(user) then
+   httpRequestLogin()
+else
+*>
+<!doctype html>
+<html>
+	<head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css"/>
+      <!--<style>
+      td.details-control {
+          background: url('files/http/details_open.png') no-repeat center center;
+          cursor: pointer;
+      }
+      tr.shown td.details-control {
+          background: url('files/http/details_close.png') no-repeat center center;
+      }
+    </style>-->
+	</head>
+	<body>
+	    <div id="content">
+
+<table id="example"  class="table table-striped table-bordered"  cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Level</th>
+                <th>Message</th>
+                <th>File</th>
+                <th>Line</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Level</th>
+                <th>Message</th>
+                <th>File</th>
+                <th>Line</th>
+                <th>Date</th>
+            </tr>
+        </tfoot>
+    </table>
+
+      </div>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" type="text/javascript"></script>
+      <script src="files/http/jquery.dataTables.js" type="text/javascript"></script>
+  		<script src='files/http/debug.js' type='text/javascript'></script>
+	</body>
+</html>
+<*
+end
+*>
