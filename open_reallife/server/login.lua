@@ -16,3 +16,16 @@ Login.TryLogin = function(username, password, autologin)
 end
 addEvent("onTryLogin", true)
 addEventHandler("onTryLogin", root, Login.TryLogin)
+
+Login.TryRegister = function(username, email, password, password2)
+  local handle = SQL.Query("SELECT * FROM accounts WHERE LCASE(username) = LCASE(?)", username)
+  local result = SQL.Poll(handle, 5)
+
+  if(#result==0)then
+    -- TODO trigger error "NO_SUCH_ACCOUNT"
+    triggerClientEvent(client, "onClientDisplayRegister", client)
+    return
+  end
+end
+addEvent("onTryRegister", true)
+addEventHandler("onTryRegister", root, Login.TryRegister)
