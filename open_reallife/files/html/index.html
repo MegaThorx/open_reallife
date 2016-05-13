@@ -1,5 +1,12 @@
 <!doctype html>
 <html lang="us">
+<script>
+	function setLeben(v) {
+		var divArray = document.getElementById('Lebensbalken');
+		
+		divArray.style.width = v+'%';
+	}
+</script>
 <head>
 	<meta charset="utf-8">
 	<title>jQuery UI Example Page</title>
@@ -13,6 +20,10 @@
 	<span id="playername">MegaThorx</span><br>
 	<span id="time">15:56</span><br>
 	€ <span id="money">5555</span>
+</div>
+
+<div class="leben">
+  <span id="Lebensbalken" style="width: 0%"></span>
 </div>
 
 <div class="radar">
