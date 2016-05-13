@@ -1,18 +1,3 @@
-.hud {
-    float: right;
-    text-align: left;
-    width: 200px;
-    border-radius: 25px;
-    background-color: rgba(37,37,37,0.5);
-    padding: 10px 10px 10px 10px;
-    color: #ffffff;
-}
-
-
-.hud #playername{
-  font-size: 1.2em;
-}
-
 .radar {
     left: 10px;
     bottom: 10px;
@@ -29,15 +14,6 @@
   position: relative;
 }
 
-#player {
-  height: 20px;
-  width: 20px;
-  left: 125px;
-  bottom: 125px;
-  position: fixed;
-  border-spacing: 0;
-}
-
 #login {
   position: absolute;
   top:0;
@@ -52,20 +28,140 @@
   visibility: hidden;
 }
 
+
 .leben { 
 	height: 20px; 
 	width: 200px;
-	right: 10px;
-	position: absolute;
-    top: 100px;
 	background: #555;
 	padding: 5px;
 }
 
 .leben > span {
-  display: block;
   height: 100%;
   background-color: rgb(231,76,60);
   position: relative;
   overflow: hidden;
 }
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,200,300,800);
+figure.snip0071 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: absolute;
+  right: 10px;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 220px;
+  max-width: 420px;
+  max-height: 150px;
+  width: 100%;
+  background: #ffffff;
+  color: #ffffff;
+  border: 5px solid #ffffff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+figure.snip0071 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+figure.snip0071 .image {
+  position: relative;
+  width: 58%;
+  overflow: hidden;
+  right: -14%;
+  float: right;
+  box-shadow: 0px 0 20px rgba(0, 0, 0, 0.5);
+  -webkit-transform: skewX(-15deg);
+  transform: skewX(-15deg);
+}
+figure.snip0071 .image img {
+  position: relative;
+  left: -20%;
+  max-width: 100%;
+  -webkit-transform: skewX(15deg);
+  transform: skewX(15deg);
+}
+figure.snip0071 figcaption {
+  background: #262626;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+}
+figure.snip0071 figcaption h2,
+figure.snip0071 figcaption p {
+  margin: 0;
+  text-align: left;
+  width: 100%;
+}
+figure.snip0071 figcaption h2 {
+  bottom: 40px;
+  position: absolute;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 1.3em;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+figure.snip0071 figcaption h2 span {
+  font-weight: 800;
+}
+figure.snip0071 figcaption p {
+  padding: 20px;
+  width: 50%;
+  bottom: 80px;
+  position: absolute;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+figure.snip0071 figcaption .position {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  line-height: 40px;
+  padding-left: 20px;
+  font-style: italic;
+  opacity: 0.6;
+}
+figure.snip0071 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+figure.snip0071.blue figcaption {
+  background: #20638f;
+}
+figure.snip0071.red figcaption {
+  background: #962d22;
+}
+figure.snip0071.green figcaption {
+  background: #57BD4B;
+}
+figure.snip0071:hover figcaption,
+figure.snip0071.hover figcaption {
+  background: #333333;
+}
+figure.snip0071:hover.blue figcaption,
+figure.snip0071.hover.blue figcaption {
+  background: #2472a4;
+}
+figure.snip0071:hover.red figcaption,
+figure.snip0071.hover.red figcaption {
+  background: #ab3326;
+}
+figure.snip0071:hover.green figcaption,
+figure.snip0071.hover.green figcaption {
+  background: #5ED152;
+}
+
+figure.snip0071:hover .image,
+figure.snip0071.hover .image {
+  box-shadow: 0px 0 0px rgba(0, 0, 0, 0.5);
+}
+
