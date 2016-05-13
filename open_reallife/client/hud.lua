@@ -1,4 +1,5 @@
 HUD = {}
+HUD.armorVisible = true
 
 HUD.Init = function()
   setPlayerHudComponentVisible ( "all", false )
@@ -13,6 +14,7 @@ HUD.Update = function()
   executeBrowserJavascript(GUI.browser, string.format('$("#time").html("%s")', Time.GetTime()))
   executeBrowserJavascript(GUI.browser, string.format('$("#money").html("%s")', tostring(getPlayerMoney()).." ".."$"))
   executeBrowserJavascript(GUI.browser, string.format('$("#zone").html("%s")', getZoneName(getElementPosition(getLocalPlayer()))))
+<<<<<<< Updated upstream
 
   local health = getElementHealth(getLocalPlayer())
   executeBrowserJavascript ( GUI.browser, "setLife('"..math.floor(health).."');" )
@@ -20,6 +22,18 @@ HUD.Update = function()
   local armor = getPedArmor(getLocalPlayer())
   if armor >= 1 then
 	   executeBrowserJavascript ( GUI.browser, "setArmor('"..math.floor(armor).."');" )
+=======
+  local Life = getElementHealth(getLocalPlayer())
+  executeBrowserJavascript ( GUI.browser, "setLife('"..math.floor(Life).."');" )
+  local Armor = getPedArmor(getLocalPlayer())
+  executeBrowserJavascript ( GUI.browser, "setArmor('"..math.floor(Armor).."');" )  
+  if Armor == 0 and HUD.armorVisible == true then
+	executeBrowserJavascript(GUI.browser, '$("#armor").css("visibility", "hidden");')
+	HUD.armor = false
+  elseif Armor > 0 and HUD.armorVisible == false then
+	executeBrowserJavascript(GUI.browser, '$("#armor").css("visibility", "visible");')
+	HUD.armor = true
+>>>>>>> Stashed changes
   end
 
 end
