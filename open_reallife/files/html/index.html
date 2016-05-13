@@ -5,6 +5,11 @@
 		var older = $("#life").attr('class');
 		$('#life').removeClass(older);
 		$('#life').addClass('c100 p'+v);
+	}	
+	function setArmor(f) {
+		var older = $("#armor").attr('class');
+		$('#armor').removeClass(older);
+		$('#armor').addClass('c100 p'+f+' blue');
 	}
 	
 	
@@ -23,22 +28,30 @@
 	<figure class="snip0071 red">
 		<figcaption>
 			<p>	
-				<i class="fa fa-map-marker" aria-hidden="true"></i>:  <span id="zone"> SF Bahnhof</span>
+				<i class="fa fa-map" aria-hidden="true"></i>:  <span id="zone"> SF Bahnhof</span>
 				<br><i class="fa fa-clock-o" aria-hidden="true"></i>:  <span id="time"> 13:15 Uhr</span>
 			</p>
-			<h2><span id="playername">Mustermann</span></h2> <span class="position">Grove Street</span>
+			<h2><span id="playername">Mustermann</span></h2><i class="fa fa-money fa-1x moneyicon" aria-hidden="true"></i><span id="money" class="moneytext">5555</span>
 		</figcaption>
 		<div class="image"><img src="http://mta/open_reallife/files/html/images/bg.png" alt="sample14" /></div>
 	</figure>
 
 <div class="cont">
-	<div id="life" class="c100 p0">
-		<span><i class="fa fa-heartbeat fa-2x" aria-hidden="true" style=" vertical-align: middle;"></i></span>
+	<div id="armor" class="c100 p0 blue" style="display: inline-block;">
+		<span style="color: #199AD1;"><i class="fa fa-shield fa-2x" aria-hidden="true" style=" vertical-align: middle;"></i></span>
 			<div class="slice">
 				<div class="bar"></div>
 					<div class="fill"></div>
 			</div>
 	 </div>
+	<div id="life" class="c100 p0" style="display: inline-block;">
+		<span style="color: #c0392b;"><i class="fa fa-heartbeat fa-2x" aria-hidden="true" style=" vertical-align: middle;"></i></span>
+			<div class="slice">
+				<div class="bar"></div>
+					<div class="fill"></div>
+			</div>
+	 </div>
+
 </div>
 
 <div class="radar">

@@ -265,7 +265,6 @@
   width: 5em;
   line-height: 5em;
   font-size: 0.2em;
-  color: #c0392b;
   display: block;
   text-align: center;
   white-space: nowrap;
@@ -1010,5 +1009,10 @@
   -ms-transform: rotate(360deg);
   -o-transform: rotate(360deg);
   transform: rotate(360deg);
+}
+
+.c100.blue .bar,
+.c100.blue .fill {
+  border-color: #199AD1 !important;
 }
 
