@@ -1,5 +1,6 @@
 GUI = {}
 GUI.handlers = {}
+GUI.isReady = false
 
 GUI.Init = function()
   GUI.browser = createBrowser(screenX, screenY, true, true)
@@ -36,6 +37,10 @@ GUI.InitRendering = function()
   end
   setBrowserAjaxHandler(GUI.browser, "ajax.htm", GUI.AjaxHandler)
   addEventHandler("onClientRender", root, GUI.Render)
+end
+
+GUI.InitReady = function()
+  GUI.isReady = true
 end
 
 GUI.Render = function()

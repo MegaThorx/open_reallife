@@ -2,7 +2,7 @@ SQL_MANAGER = {}
 
 SQL_MANAGER.Validate = function()
   local handle = SQL.Query("SELECT TABLE_NAME as name FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' AND TABLE_SCHEMA=?", _CONFIG["db.dbname"])
-  local result = SQL.Poll(handle, 25)
+  local result = SQL.Poll(handle, -1)
   local found = {}
 
   for k,v in pairs(result) do
@@ -70,7 +70,7 @@ end
 
 SQL_MANAGER.ValidateTable = function(name, structure)
     local shandle = SQL.Query(string.format("SHOW columns FROM `%s`.`%s`", _CONFIG["db.dbname"], name))
-    local struc = SQL.Poll(shandle, 10)
+    local struc = SQL.Poll(shandle, -1)
 
     for k,v in pairs(structure) do
       local found;

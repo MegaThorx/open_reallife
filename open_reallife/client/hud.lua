@@ -7,19 +7,21 @@ HUD.Init = function()
 end
 
 HUD.Update = function()
+  if not GUI.isReady then return end
   executeBrowserJavascript(GUI.browser, string.format('$("#playername").html("%s")', getPlayerName(getLocalPlayer())))
 
   executeBrowserJavascript(GUI.browser, string.format('$("#time").html("%s")', Time.GetTime()))
   executeBrowserJavascript(GUI.browser, string.format('$("#money").html("%s")', tostring(getPlayerMoney())))
-  local Life = getElementHealth(getLocalPlayer())
-  executeBrowserJavascript ( GUI.browser, "setLife('"..math.floor(Life).."');" )	
+  local health = getElementHealth(localPlayer)
+  executeBrowserJavascript ( GUI.browser, "setLife('"..math.floor(health).."');" )
 
 end
 
 HUD.UpdateRadar = function()
+  if not GUI.isReady then return end
   local x, y = getElementPosition(localPlayer)
   local _, _, z = getElementRotation(localPlayer)
-  local fail = executeBrowserJavascript(GUI.browser, string.format('updateRadarPosition(%d, %d, %d);', x, y, z*-1))
+  executeBrowserJavascript(GUI.browser, string.format('updateRadarPosition(%d, %d, %d);', x, y, z*-1))
 end
 
 HUD.Hide = function()

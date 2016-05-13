@@ -17,6 +17,14 @@ SQL_STRUCTURE["accounts"] = {
     ["datatype"] = "VARCHAR",
     ["length"] = 64,
   },
+  ["email"] = {
+    ["datatype"] = "VARCHAR",
+    ["length"] = 64,
+  },
+  ["salt"] = {
+    ["datatype"] = "VARCHAR",
+    ["length"] = 8,
+  },
   ["serial"] = {
     ["datatype"] = "VARCHAR",
     ["length"] = 32,
