@@ -11,6 +11,8 @@ HUD.Update = function()
 
   executeBrowserJavascript(GUI.browser, string.format('$("#time").html("%s")', Time.GetTime()))
   executeBrowserJavascript(GUI.browser, string.format('$("#money").html("%s")', tostring(getPlayerMoney())))
+  local Leben = getElementHealth(getLocalPlayer())
+  executeBrowserJavascript ( GUI.browser, "setLeben('"..Leben.."');" )	
 
 end
 
