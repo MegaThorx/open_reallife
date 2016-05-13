@@ -1,5 +1,6 @@
 GUI = {}
 GUI.handlers = {}
+GUI.isReady = false
 
 GUI.Init = function()
   GUI.browser = createBrowser(screenX, screenY, true, true)
@@ -38,19 +39,21 @@ GUI.InitRendering = function()
   addEventHandler("onClientRender", root, GUI.Render)
 end
 
+GUI.InitReady = function()
+  GUI.isReady = true
+end
+
 GUI.Render = function()
   dxSetBlendMode("add")
   dxDrawImage(0, 0, screenX, screenY, GUI.browser, 0, 0,  0, tocolor(255, 255, 255, 255), true)
   dxSetBlendMode("blend")
-
-  dxDrawText(string.format("x %d, y %d, z %d", getElementPosition(localPlayer)), 0, 100)
 end
 
 GUI.AjaxHandler = function(get, post)
   if get then
     for k,v in pairs(get) do
       if GUI.handlers[k] then
-        return GUI.handlers[k](v)
+        return GUI.handlers[k](v, post)
       end
     end
   end

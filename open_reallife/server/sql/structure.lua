@@ -9,13 +9,21 @@ SQL_STRUCTURE["accounts"] = {
     ["notnull"] = true,
     ["autoincrement"] = true,
   },
-  ["name"] = {
+  ["username"] = {
     ["datatype"] = "VARCHAR",
-    ["length"] = 22,
+    ["length"] = 32,
   },
   ["password"] = {
     ["datatype"] = "VARCHAR",
     ["length"] = 64,
+  },
+  ["email"] = {
+    ["datatype"] = "VARCHAR",
+    ["length"] = 64,
+  },
+  ["salt"] = {
+    ["datatype"] = "VARCHAR",
+    ["length"] = 8,
   },
   ["serial"] = {
     ["datatype"] = "VARCHAR",

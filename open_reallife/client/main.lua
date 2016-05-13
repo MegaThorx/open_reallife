@@ -21,18 +21,16 @@ addEventHandler("onClientResourceStart", resourceRoot, function()
   addEventHandler ( "onClientBrowserDocumentReady" , GUI.browser,
   	function ( url )
         triggerServerEvent("onClientReady", localPlayer)
+        GUI.InitReady()
   	end
   )
 end)
 
 
 bindKey("m", "down", function()
-  showCursor(not isCursorShowing(), true)
-  if(isCursorShowing())then
-    focusBrowser(GUI.browser)
+  if(Cursor.IsShowing())then
+    Cursor.Show()
+  else
+    Cursor.Hide()
   end
-end)
-
-bindKey("n", "down", function()
-  outputChatBox(Translations.Translate("test"))
 end)

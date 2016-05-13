@@ -4,6 +4,10 @@
   <!-- Shared -->
   <script src="shared/config.lua" type="shared" />
   <script src="shared/helpers/time.lua" type="shared" />
+  <script src="shared/helpers/validator.lua" type="shared" />
+  <script src="shared/helpers/random.lua" type="shared" />
+  <script src="shared/helpers/utils.lua" type="shared" />
+  <script src="shared/helpers/html.lua" type="shared" />
   <!-- End Shared -->
 
   <!-- Server -->
@@ -20,6 +24,7 @@
   <script src="server/helpers/elementdata.lua" type="server" />
 
   <script src="server/client.lua" type="server" />
+  <script src="server/http.lua" type="server" />
   <script src="server/login.lua" type="server" />
 
   <script src="server/main.lua" type="server" />
@@ -50,19 +55,20 @@
   <file src="files/html/css/login.css" />
   <file src="files/html/css/bootstrap.min.css" />
   <file src="files/html/css/circle.css" />
-  
+
   <file src="files/html/fa/css/font-awesome.css" />
   <file src="files/html/fa/css/font-awesome.min.css" />
-  
-  
+
+
   <file src="files/html/fa/fonts/FontAwesome.otf" />
   <file src="files/html/fa/fonts/fontawesome-webfont.ttf" />
   <file src="files/html/fa/fonts/fontawesome-webfont.woff" />
   <file src="files/html/fa/fonts/fontawesome-webfont.woff2" />
-  
+
 
   <file src="files/html/js/jquery.js" />
   <file src="files/html/js/jquery-ui.js" />
+  <file src="files/html/js/jquery.form.min.js" />
   <file src="files/html/js/hud.js" />
   <file src="files/html/js/windows.js" />
   <file src="files/html/js/translate.js" />
@@ -88,4 +94,14 @@
   <file src="files/translations/de.ini" />
   <file src="files/translations/en.ini" />
   <!-- End Files -->
+
+  <!--- Http -->
+	<html src="files/http/debug.htm" />
+	<html src="files/http/debug.js" raw="true" />
+	<html src="files/http/jquery.dataTables.js" raw="true" />
+  <html src="files/http/details_close.png" raw="true" />
+  <html src="files/http/details_open.png" raw="true" />
+
+	<export function="HTTPGetErrorLog" http="true" />
+  <!-- End Http -->
 </meta>

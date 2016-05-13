@@ -7,23 +7,38 @@ HUD.Init = function()
 end
 
 HUD.Update = function()
+  if not GUI.isReady then return end
   executeBrowserJavascript(GUI.browser, string.format('$("#playername").html("%s")', getPlayerName(getLocalPlayer())))
 
   executeBrowserJavascript(GUI.browser, string.format('$("#time").html("%s")', Time.GetTime()))
   executeBrowserJavascript(GUI.browser, string.format('$("#money").html("%s")', tostring(getPlayerMoney()).." ".."$"))
   executeBrowserJavascript(GUI.browser, string.format('$("#zone").html("%s")', getZoneName(getElementPosition(getLocalPlayer()))))
-  local Life = getElementHealth(getLocalPlayer())
-  executeBrowserJavascript ( GUI.browser, "setLife('"..math.floor(Life).."');" )	
-  local Armor = getPedArmor(getLocalPlayer())
-  if Armor >= 1 then
-	executeBrowserJavascript ( GUI.browser, "setArmor('"..math.floor(Armor).."');" )
+
+  local health = getElementHealth(getLocalPlayer())
+  executeBrowserJavascript ( GUI.browser, "setLife('"..math.floor(health).."');" )
+
+  local armor = getPedArmor(getLocalPlayer())
+  if armor >= 1 then
+	   executeBrowserJavascript ( GUI.browser, "setArmor('"..math.floor(armor).."');" )
   end
-  
 
 end
 
 HUD.UpdateRadar = function()
+  if not GUI.isReady then return end
   local x, y = getElementPosition(localPlayer)
   local _, _, z = getElementRotation(localPlayer)
-  local fail = executeBrowserJavascript(GUI.browser, string.format('updateRadarPosition(%d, %d, %d);', x, y, z*-1))
+  executeBrowserJavascript(GUI.browser, string.format('updateRadarPosition(%d, %d, %d);', x, y, z*-1))
+end
+
+HUD.Hide = function()
+  executeBrowserJavascript(GUI.browser, '$(".hud").css("visibility", "hidden");')
+  executeBrowserJavascript(GUI.browser, '$(".radar").css("visibility", "hidden");')
+  showChat(false)
+end
+
+HUD.Show = function()
+  executeBrowserJavascript(GUI.browser, '$(".hud").css("visibility", "visible");')
+  executeBrowserJavascript(GUI.browser, '$(".radar").css("visibility", "visible");')
+  showChat(true)
 end

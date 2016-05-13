@@ -26,7 +26,7 @@ addEventHandler("onResourceStart", resourceRoot, function()
 
 
   local diff = getTickCount() - start
-
+  
   for k,v in ipairs(getElementsByType("player")) do
     spawnPlayer(v, 0, 0, 3)
     fadeCamera(v, true)
