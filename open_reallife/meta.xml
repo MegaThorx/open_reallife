@@ -49,6 +49,17 @@
   <file src="files/html/css/hud.css" />
   <file src="files/html/css/login.css" />
   <file src="files/html/css/bootstrap.min.css" />
+  <file src="files/html/css/circle.css" />
+  
+  <file src="files/html/fa/css/font-awesome.css" />
+  <file src="files/html/fa/css/font-awesome.min.css" />
+  
+  
+  <file src="files/html/fa/fonts/FontAwesome.otf" />
+  <file src="files/html/fa/fonts/fontawesome-webfont.ttf" />
+  <file src="files/html/fa/fonts/fontawesome-webfont.woff" />
+  <file src="files/html/fa/fonts/fontawesome-webfont.woff2" />
+  
 
   <file src="files/html/js/jquery.js" />
   <file src="files/html/js/jquery-ui.js" />
