@@ -11,10 +11,16 @@ HUD.Update = function()
   executeBrowserJavascript(GUI.browser, string.format('$("#playername").html("%s")', getPlayerName(getLocalPlayer())))
 
   executeBrowserJavascript(GUI.browser, string.format('$("#time").html("%s")', Time.GetTime()))
-  executeBrowserJavascript(GUI.browser, string.format('$("#money").html("%s")', tostring(getPlayerMoney())))
+  executeBrowserJavascript(GUI.browser, string.format('$("#money").html("%s")', tostring(getPlayerMoney()).." ".."$"))
   executeBrowserJavascript(GUI.browser, string.format('$("#zone").html("%s")', getZoneName(getElementPosition(getLocalPlayer()))))
-  local health = getElementHealth(localPlayer)
+
+  local health = getElementHealth(getLocalPlayer())
   executeBrowserJavascript ( GUI.browser, "setLife('"..math.floor(health).."');" )
+
+  local armor = getPedArmor(getLocalPlayer())
+  if armor >= 1 then
+	   executeBrowserJavascript ( GUI.browser, "setArmor('"..math.floor(armor).."');" )
+  end
 
 end
 

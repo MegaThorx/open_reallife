@@ -118,10 +118,20 @@ figure.snip0071 figcaption p {
   font-size: 0.9em;
   opacity: 0.8;
 }
-figure.snip0071 figcaption .position {
+
+figure.snip0071 figcaption .moneyicon {
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  line-height: 40px;
+  padding-left: 20px;
+  opacity: 0.6;
+}
+
+figure.snip0071 figcaption .moneytext {
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 25px;
   line-height: 40px;
   padding-left: 20px;
   font-style: italic;
