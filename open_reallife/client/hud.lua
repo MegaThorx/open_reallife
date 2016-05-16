@@ -1,4 +1,5 @@
 HUD = {}
+HUD.armorVisible = true
 
 HUD.Init = function()
   setPlayerHudComponentVisible ( "all", false )
@@ -16,10 +17,14 @@ HUD.Update = function()
 
   local health = getElementHealth(getLocalPlayer())
   executeBrowserJavascript ( GUI.browser, "setLife('"..math.floor(health).."');" )
-
-  local armor = getPedArmor(getLocalPlayer())
-  if armor >= 1 then
-	   executeBrowserJavascript ( GUI.browser, "setArmor('"..math.floor(armor).."');" )
+  local Armor = getPedArmor(getLocalPlayer())
+  executeBrowserJavascript ( GUI.browser, "setArmor('"..math.floor(Armor).."');" )  
+  if Armor == 0 and HUD.armorVisible == true then
+	executeBrowserJavascript(GUI.browser, '$("#armor").css("visibility", "hidden");')
+	HUD.armor = false
+  elseif Armor > 0 and HUD.armorVisible == false then
+	executeBrowserJavascript(GUI.browser, '$("#armor").css("visibility", "visible");')
+	HUD.armor = true
   end
 
 end
